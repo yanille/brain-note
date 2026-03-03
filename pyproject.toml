@@ -3,9 +3,9 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "brain-cli"
+name = "brain-note"
 version = "0.1.0"
-description = "Brain: Terminal Knowledge System"
+description = "Brain: A command-line interface for managing your knowledge base."
 readme = "README.md"
 requires-python = ">=3.9"
 authors = [
