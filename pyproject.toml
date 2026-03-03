@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "brain-tks"
+version = "0.1.0"
+description = "Brain: Terminal Knowledge System"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    { name = "Griffin McManus" }
+]
+dependencies = []
+
+[project.scripts]
+brain = "brain.cli:main"
