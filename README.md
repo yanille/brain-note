@@ -36,6 +36,7 @@ Just files.
   `brain help`                 Show help information
   `brain tree`                 Display the full command tree
   `brain note add <content>`   Create a new note
+  `brain note open <id>`       Open note with id
 
 ------------------------------------------------------------------------
 
@@ -87,7 +88,8 @@ Example output:
     ├── help
     ├── tree
     └── note
-        └── add
+        ├── add
+        └── tree
 
 ------------------------------------------------------------------------
 
@@ -128,7 +130,6 @@ This makes it easy to extend with new commands.
 
 -   `brain note list`
 -   `brain note append <id> <content>`
--   `brain note open <id>`
 -   `brain note delete <id>`
 -   `brain note delete-alls`
 -   `brain search <query>`
