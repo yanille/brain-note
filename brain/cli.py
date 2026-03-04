@@ -35,6 +35,22 @@ def note_add(args) -> None:
     print(f"Created note {note_id}.")
 
 
+def note_open(args):
+    if not args:
+        print("Usage: brain note open <id>")
+        return
+
+    note_id: int = int(args[0])
+    note_path: Path = NOTES_DIR / f"{note_id}.md"
+
+    if not note_path.exists():
+        print(f"Note {note_id} not found.")
+        return
+
+    with open(note_path) as f:
+        print(f.read())
+
+
 def cmd_tree(args) -> None:
     print_tree(COMMANDS)
 
@@ -59,6 +75,8 @@ CORE COMMANDS
 NOTE COMMANDS
     note add <content>
         Create a new note with the provided content.
+    note open <id>
+        Open and display the content of a note by its ID.
 
 """
     )
@@ -69,6 +87,7 @@ COMMANDS = {
     "tree": cmd_tree,
     "note": {
         "add": note_add,
+        "open": note_open,
     },
 }
 
