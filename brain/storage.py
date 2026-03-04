@@ -1,5 +1,5 @@
 from pathlib import Path
-from typing import List
+from typing import List, Optional
 
 BRAIN_DIR = Path.home() / ".brain"
 NOTES_DIR = BRAIN_DIR / "notes"
@@ -16,6 +16,6 @@ def get_next_id() -> int:
     return max(existing_ids, default=0) + 1
 
 
-def find_note_path(note_id: int) -> Path | None:
+def find_note_path(note_id: int) -> Optional[Path]:
     matches: List[Path] = list(NOTES_DIR.glob(f"{note_id}*.md"))
     return matches[0] if matches else None
