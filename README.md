@@ -37,6 +37,7 @@ Just files.
   `brain tree`                 Display the full command tree
   `brain note add <content>`   Create a new note
   `brain note open <id>`       Open note with id
+  `brain search <query>`       Search across notes for content
 
 ------------------------------------------------------------------------
 
@@ -87,6 +88,7 @@ Example output:
     brain
     ├── help
     ├── tree
+    ├── search    
     └── note
         ├── add
         └── open
@@ -132,7 +134,6 @@ This makes it easy to extend with new commands.
 -   `brain note append <id> <content>`
 -   `brain note delete <id>`
 -   `brain note delete-alls`
--   `brain search <query>`
 
 ------------------------------------------------------------------------
 

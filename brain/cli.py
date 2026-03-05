@@ -2,6 +2,7 @@ import sys
 from .storage import ensure_storage
 from .router import dispatch, print_tree
 from .commands.notes import note_add, note_open
+from .commands.search import cmd_search
 
 
 def cmd_help(args):
@@ -13,6 +14,7 @@ USAGE
 CORE COMMANDS
     help
     tree
+    search
     note
 
 NOTE COMMANDS
@@ -29,6 +31,7 @@ def cmd_tree(args):
 COMMANDS = {
     "help": cmd_help,
     "tree": cmd_tree,
+    "search": cmd_search,
     "note": {
         "add": note_add,
         "open": note_open,
