@@ -1,7 +1,7 @@
 import sys
 from .storage import ensure_storage
 from .router import dispatch, print_tree
-from .commands.notes import note_add, note_open
+from .commands.notes import note_add, note_open, note_list
 from .commands.search import cmd_search
 
 
@@ -20,6 +20,7 @@ CORE COMMANDS
 NOTE COMMANDS
     note add <content>
     note open <id>
+    note list
 """
     )
 
@@ -35,6 +36,7 @@ COMMANDS = {
     "note": {
         "add": note_add,
         "open": note_open,
+        "list": note_list,
     },
 }
 
