@@ -41,3 +41,27 @@ def note_open(args):
 
     with open(note_path) as f:
         print(f.read())
+
+
+def note_list(args) -> None:
+
+    files: list[Path] = sorted(
+        NOTES_DIR.glob("*.md"), key=lambda f: int(f.stem) if f.stem.isdigit() else 0
+    )
+
+    if not files:
+        print("No notes found.")
+        return
+
+    for file in files:
+        note_id: str = file.stem
+
+        with open(file) as f:
+            first_line: str = f.readline().strip()
+
+        if first_line.startswith("#"):
+            title: str = first_line.lstrip("# ").strip()
+        else:
+            title: str = "(untitled)"
+
+        print(f"[{note_id}] {title}")
