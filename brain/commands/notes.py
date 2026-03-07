@@ -65,3 +65,31 @@ def note_list(args) -> None:
             title: str = "(untitled)"
 
         print(f"[{note_id}] {title}")
+
+
+def note_delete(args) -> None:
+    if not args:
+        print("Usage: brain note delete <id> [id...]")
+        return
+
+    deleted: list[str] = []
+    missing: list[str] = []
+
+    for note_id in args:
+        if not note_id.isdigit():
+            print(f"Invalid note id: {note_id}")
+            continue
+
+        note_path = NOTES_DIR / f"{note_id}.md"
+
+        if note_path.exists():
+            note_path.unlink()
+            deleted.append(note_id)
+        else:
+            missing.append(note_id)
+
+    if deleted:
+        print("Deleted notes:", ", ".join(deleted))
+
+    if missing:
+        print("Notes not found:", ", ".join(missing))
