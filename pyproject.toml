@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "brain-note"
-version = "0.4.2"
+version = "0.5.2"
 description = "A minimal, local-first CLI note system."
 readme = "README.md"
 requires-python = ">=3.9"
