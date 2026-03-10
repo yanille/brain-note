@@ -40,6 +40,7 @@ Just files.
   `brain search <query>`       Search across notes for content
   `brain note list`            List all the notes
   `brain note delete <id>`     Delete notes for given ids
+  `brain note delete-all`      Delete all notes
 
 ------------------------------------------------------------------------
 
@@ -95,7 +96,8 @@ Example output:
         ├── add
         ├── open
         ├── list
-        └── delete
+        ├── delete
+        └── delete-all
 
 ------------------------------------------------------------------------
 
@@ -135,7 +137,6 @@ This makes it easy to extend with new commands.
 ## 🔮 Future Improvements
 
 -   `brain note append <id> <content>`
--   `brain note delete-alls`
 
 ------------------------------------------------------------------------
 
