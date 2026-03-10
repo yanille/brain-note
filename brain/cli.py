@@ -1,7 +1,7 @@
 import sys
 from .storage import ensure_storage
 from .router import dispatch, print_tree
-from .commands.notes import note_add, note_open, note_list, note_delete
+from .commands.notes import note_add, note_open, note_list, note_delete, note_delete_all
 from .commands.search import cmd_search
 
 
@@ -22,6 +22,7 @@ NOTE COMMANDS
     note open <id>
     note list
     note delete <id> [id...]
+    note delete-all
 """
     )
 
@@ -39,6 +40,7 @@ COMMANDS = {
         "open": note_open,
         "list": note_list,
         "delete": note_delete,
+        "delete-all": note_delete_all,
     },
 }
 

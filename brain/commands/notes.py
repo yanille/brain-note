@@ -93,3 +93,22 @@ def note_delete(args) -> None:
 
     if missing:
         print("Notes not found:", ", ".join(missing))
+
+
+def note_delete_all(args) -> None:
+    files: list[Path] = list(NOTES_DIR.glob("*.md"))
+
+    if not files:
+        print("No notes to delete.")
+        return
+
+    confirm = input(f"Delete ALL {len(files)} notes? (y/n): ").strip().lower()
+
+    if confirm != "y":
+        print("Aborted.")
+        return
+
+    for file in files:
+        file.unlink()
+
+    print(f"Deleted {len(files)} notes.")
